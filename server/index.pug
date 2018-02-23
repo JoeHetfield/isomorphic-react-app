@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(content="ie=edge" http-equiv="x-ua-compatible")
+    base(href="/")
+    title Newex
+  body
+    #app !{html}
+    style#jss-server-side.
+      !{css}
+    script(type="text/javascript" src="http://localhost:8080/app.js")
+    script(type="text/javascript").
+      !{localeData}

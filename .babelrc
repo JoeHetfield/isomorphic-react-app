@@ -1,0 +1,24 @@
+{
+  "presets": [
+    "env",
+    "stage-1",
+    "react"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./app"],
+      "alias": {
+        "theme": "./app/theme",
+        "utils": "./app/utils",
+        "pages" : "./app/pages",
+        "config": "./app/config",
+        "actions": "./app/actions",
+        "reducers": "./app/reducers",
+        "components" : "./app/components"
+      }
+    }],
+    ["react-intl", {
+      "messagesDir": "./server/messages/"
+    }]
+  ]
+}

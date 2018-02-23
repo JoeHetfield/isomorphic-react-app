@@ -1,0 +1,12 @@
+[
+  {
+    "id": "marketingcard.botton.ok",
+    "description": "Label for OK button",
+    "defaultMessage": "OK"
+  },
+  {
+    "id": "marketingcard.botton.cancel",
+    "description": "Label for Cancel button",
+    "defaultMessage": "Cancel"
+  }
+]
