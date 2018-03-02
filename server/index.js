@@ -57,13 +57,13 @@ app.use(cookieParser());
 
 // csurf
 
+// routes
+app.get('/nossr', (req, res) => {
+  res.send('nossr');
+});
+
 // server side rendering
 app.use(ssr);
-
-// routes
-// app.get('/', (req, res) => {
-//   res.render('index');
-// });
 
 // 404
 app.use((req, res) => {
