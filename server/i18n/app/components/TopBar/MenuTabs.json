@@ -1,0 +1,18 @@
+[
+  {
+    "id": "menutabs.token2token",
+    "defaultMessage": "Token Trading"
+  },
+  {
+    "id": "menutabs.fiat2token",
+    "defaultMessage": "Fiat To Token"
+  },
+  {
+    "id": "menutabs.futures",
+    "defaultMessage": "Futures"
+  },
+  {
+    "id": "menutabs.account",
+    "defaultMessage": "Account"
+  }
+]

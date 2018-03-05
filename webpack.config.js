@@ -23,7 +23,7 @@ const commonConfig = merge([
         theme: path.resolve(__dirname, 'app/theme'),
         utils: path.resolve(__dirname, 'app/utils/'),
         pages: path.resolve(__dirname, 'app/pages/'),
-        config: path.resolve(__dirname, 'app/config'),
+        config: path.resolve(__dirname, 'app/config/'),
         actions: path.resolve(__dirname, 'app/actions/'),
         reducers: path.resolve(__dirname, 'app/reducers/'),
         components: path.resolve(__dirname, 'app/components/'),

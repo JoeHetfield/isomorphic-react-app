@@ -7,3 +7,11 @@ export default {
     secondary: red,
   },
 };
+
+export const dark = {
+  palette: {
+    type: 'dark',
+    primary: blue,
+    secondary: red,
+  },
+};

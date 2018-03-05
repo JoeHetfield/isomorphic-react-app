@@ -1,56 +1,89 @@
-'user strict';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Reboot from 'material-ui/Reboot';
 import { withStyles } from 'material-ui/styles';
+import { CircularProgress } from 'material-ui/Progress';
+import { IntlProvider } from 'react-intl';
 
-import MenuBar from 'components/MenuBar';
+import TopBar from 'components/TopBar';
 
-import Coin2CoinTransaction from 'pages/Coin2CoinTransaction';
-import OutterTransaction from 'pages/OutterTransaction';
-import ContractTransaction from 'pages/ContractTransaction';
-import FundManagement from 'pages/FundManagement';
+import Token2Token from 'pages/Token2Token';
+import Fiat2Token from 'pages/Fiat2Token';
+import Futures from 'pages/Futures';
+import Account from 'pages/Account';
 
+import { Bootstrap } from 'actions';
 
 const styles = {
   frame: {
     position: 'relative',
     display: 'flex',
-    width: '100%',
     height: '100%',
+    width: '100%',
+  },
+  progress: {
+    margin: 'auto',
   },
 };
 
 class Frame extends React.Component {
-  // Remove the server-side injected CSS.
   componentDidMount() {
+    // Remove the server-side injected CSS.
     const jssStyles = document.getElementById('jss-server-side');
     if (jssStyles && jssStyles.parentNode) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
+
+    this.props.bootstrap();
   }
 
   render() {
-    const { classes } = this.props;
+    const {
+      classes,
+      booting,
+      locale,
+      messages,
+    } = this.props;
 
-    return (
-      <div className={classes.frame}>
-        <Reboot />
-        <MenuBar />
-        <Route exact path='/' component={OutterTransaction} />
-        <Route exact path='/Coin2CoinTransaction' component={Coin2CoinTransaction} />
-        <Route exact path='/OutterTransaction' component={OutterTransaction} />
-        <Route exact path='/ContractTransaction' component={ContractTransaction} />
-        <Route exact path='/FundManagement' component={FundManagement} />
-      </div>
-    );
+    return booting
+      ? <div className={classes.frame}>
+          <CircularProgress className={classes.progress} />
+        </div>
+      : <IntlProvider locale={locale} key={locale} messages={messages[locale]}>
+          <div className={classes.frame}>
+            <Reboot />
+            <TopBar />
+            <Route exact path='/' component={Token2Token} />
+            <Route exact path='/token2token' component={Token2Token} />
+            <Route exact path='/fiat2token' component={Fiat2Token} />
+            <Route exact path='/futures' component={Futures} />
+            <Route exact path='/account' component={Account} />
+          </div>
+        </IntlProvider>;
   }
 }
 
 Frame.propTypes = {
   classes: PropTypes.object.isRequired,
+  booting: PropTypes.bool.isRequired,
+  locale: PropTypes.string.isRequired,
+  messages: PropTypes.object.isRequired,
+  bootstrap: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles)(Frame);
+const mapStateToProps = state => ({
+  booting: state.booting,
+  locale: state.locale,
+  messages: state.messages,
+});
+
+const mapDispatchToProps = {
+  bootstrap: Bootstrap.start,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withStyles(styles)(Frame));

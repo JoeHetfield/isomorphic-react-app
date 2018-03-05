@@ -1,5 +1,20 @@
 {
-  "marketingcard.botton.ok": "确定",
-  "marketingcard.botton.cancel": "取消",
-  "c2ct.topbar.title": "币币交易"
+  "marketingcard.botton.ok": "OK",
+  "marketingcard.botton.cancel": "Cancel",
+  "helplist.tooltip": "帮助",
+  "helplist.getstart": "新手指导",
+  "helplist.fqa": "常见问题",
+  "helplist.fee": "费率标准",
+  "helplist.security": "账户安全",
+  "helplist.more": "更多帮助",
+  "languagelist.tooltip": "语言",
+  "languagelist.chinese": "汉语",
+  "languagelist.english": "英语",
+  "languagelist.japanese": "日语",
+  "languagelist.korean": "韩语",
+  "menutabs.token2token": "币币交易",
+  "menutabs.fiat2token": "场外交易",
+  "menutabs.futures": "合约交易",
+  "menutabs.account": "资金管理",
+  "c2ct.topbar.title": "Coin to Coin Transaction"
 }

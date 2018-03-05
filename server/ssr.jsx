@@ -38,7 +38,12 @@ export default (req, res) => {
 
   const generateClassName = createGenerateClassName();
 
-  const locale = req.cookies.locale || accepts(req).language(config.supportedLanguages) || 'zh';
+  const locale = req.cookies.locale || accepts(req).language(config.supportedLanguages) || 'en';
+
+  console.log('====================')
+  console.log(accepts(req).language());
+  console.log(locale);
+  console.log('====================')
 
   // Render the component to a string.
   const html = renderToString(

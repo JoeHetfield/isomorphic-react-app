@@ -21,11 +21,10 @@ const styles = theme => ({
   },
 });
 
-function OutterTransaction({ classes }) {
+function Fiat2Token({ classes }) {
   // const { classes } = props;
   return (
-    <div style={{ width: '100%' }}>
-      <TopBar title="场外交易" />
+    <Content>
 
       <Grid container justify="space-between" spacing={0}>
         <Grid item xs={2}>
@@ -56,12 +55,12 @@ function OutterTransaction({ classes }) {
         <Grid item xs={10}>
         </Grid>
       </Grid>
-    </div>
+    </Content>
   );
 }
 
-OutterTransaction.propTypes = {
+Fiat2Token.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(OutterTransaction);
+export default withStyles(styles)(Fiat2Token);

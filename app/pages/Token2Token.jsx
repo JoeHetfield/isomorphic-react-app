@@ -11,17 +11,26 @@ import ExpansionPanel, {
   ExpansionPanelSummary,
   ExpansionPanelActions,
 } from 'material-ui/ExpansionPanel';
+import Card from 'material-ui/Card';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import { FormattedMessage, intlShape, injectIntl, defineMessages } from 'react-intl';
-
-import TopBar from 'components/TopBar';
+import { ResponsiveContainer, LineChart, Line } from 'recharts';
 import Content from 'components/Content';
 import MarketingCard from 'components/MarketingCard';
+import QuotationCard from 'components/QuotationCard';
 
 const styles = theme => ({
+  paper: {
+    height: 280,
+    margin: '-24px -24px 0px -24px',
+    padding: 24,
+    backgroundColor: theme.palette.primary.main,
+    display: 'flex',
+    alignItems: 'center',
+  },
   card: {
     maxWidth: 345,
   },
@@ -52,58 +61,75 @@ const data = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-function Coin2CoinTransaction({ classes, intl }) {
+function Token2Token({ classes, intl }) {
   // const { classes } = props;
   return (
     <Content>
-      <TopBar title={intl.formatMessage(messages.title)} />
 
-      <Grid container justify="space-between" style={{ marginBottom: 8 }}>
-        {[0, 1, 2, 3].map(value => (
-          <Grid key={value} item xs={3}>
-            <MarketingCard seed={value} />
-          </Grid>
-        ))}
-      </Grid>
+      <Paper className={classes.paper} elevation={0} square>
+        <Grid container justify="space-between">
+          {[0, 1, 2, 3].map(value => (
+            <Grid key={value} item xs={3}>
+              <MarketingCard seed={value} />
+            </Grid>
+          ))}
+        </Grid>
+      </ Paper>
 
-      <div style={{ marginBottom: 16 }}>
-        <ExpansionPanel>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <div className={classes.column}>
-              <Typography className={classes.heading}>Location</Typography>
-            </div>
-            <div className={classes.column}>
-              <Typography className={classes.secondaryHeading}>Select trip destination</Typography>
-            </div>
+      <div style={{ marginBottom: 16, margin: '0px -24px 24px -24px'}}>
+        <ExpansionPanel style={{ backgroundColor: '#1976D2', color: 'white' }}>
+          <ExpansionPanelSummary>
+            <Grid container justify="space-around">
+              <Grid item>
+                <Typography style={{ color: '#FFF' }} className={classes.heading}>急速公告，非常重要</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.secondaryHeading}>Select trip destination</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.secondaryHeading}>Select trip destination</Typography>
+              </Grid>
+            </Grid>
           </ExpansionPanelSummary>
-          <ExpansionPanelDetails className={classes.details}>
-            <Typography variant="caption">
-              Select your destination of choice<br />
-              <a href="#sub-labels-and-columns" className={classes.link}>
-                Learn more
-              </a>
-            </Typography>
+          <ExpansionPanelDetails style={{ paddingRight: 58 }}>
+            <Grid container justify="space-around">
+              <Grid item>
+                <Typography style={{ color: '#FFF' }} className={classes.heading}>急速公告，非常重要</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.secondaryHeading}>Select trip destination</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.secondaryHeading}>Select trip destination</Typography>
+              </Grid>
+            </Grid>
           </ExpansionPanelDetails>
-          <Divider />
-          <ExpansionPanelActions>
-            <Button size="small">Cancel</Button>
-            <Button size="small" color="primary">
-              Save
-            </Button>
-          </ExpansionPanelActions>
+          <ExpansionPanelDetails style={{ paddingRight: 58 }}>
+            <Grid container justify="space-around">
+              <Grid item>
+                <Typography style={{ color: '#FFF' }} className={classes.heading}>急速公告，非常重要</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.secondaryHeading}>Select trip destination</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.secondaryHeading}>Select trip destination</Typography>
+              </Grid>
+            </Grid>
+          </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
 
-      <Grid container justify="space-between" style={{ marginBottom: 8 }}>
-        {[5, 6, 7].map(value => (
-          <Grid key={value} item xs={4}>
-            <MarketingCard seed={value} />
+      <Grid container justify="space-between" style={{ marginBottom: 16 }}>
+        {['uv', 'pv', 'amt', 9].map(value => (
+          <Grid key={value} item xs={3}>
+            <QuotationCard />
           </Grid>
         ))}
       </Grid>
 
       <Paper className={classes.root}>
-        <AppBar position="static" color="white">
+        <AppBar position="static" elevation={0}>
           <Tabs value={0}>
             <Tab label="自选" />
             <Tab label="BTC交易区" />
@@ -146,9 +172,9 @@ function Coin2CoinTransaction({ classes, intl }) {
   );
 }
 
-Coin2CoinTransaction.propTypes = {
+Token2Token.propTypes = {
   classes: PropTypes.object.isRequired,
   intl: intlShape.isRequired,
 };
 
-export default withStyles(styles)(injectIntl(Coin2CoinTransaction));
+export default withStyles(styles)(injectIntl(Token2Token));

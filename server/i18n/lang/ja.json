@@ -1,5 +1,9 @@
 {
   "marketingcard.botton.ok": "OK",
   "marketingcard.botton.cancel": "Cancel",
+  "menutabs.token2token": "Token Trading",
+  "menutabs.fiat2token": "Fiat To Token",
+  "menutabs.futures": "Futures",
+  "menutabs.account": "Account",
   "c2ct.topbar.title": "Coin to Coin Transaction"
 }

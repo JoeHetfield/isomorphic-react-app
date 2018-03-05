@@ -1,0 +1,26 @@
+[
+  {
+    "id": "helplist.tooltip",
+    "defaultMessage": "Help"
+  },
+  {
+    "id": "helplist.getstart",
+    "defaultMessage": "Get Start"
+  },
+  {
+    "id": "helplist.fqa",
+    "defaultMessage": "FQA"
+  },
+  {
+    "id": "helplist.fee",
+    "defaultMessage": "Fee"
+  },
+  {
+    "id": "helplist.security",
+    "defaultMessage": "Security"
+  },
+  {
+    "id": "helplist.more",
+    "defaultMessage": "More"
+  }
+]

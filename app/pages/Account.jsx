@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 // import classNames from 'classnames';
 
-import TopBar from 'components/TopBar';
+import Content from 'components/Content';
 
 const styles = theme => ({
   button: {
@@ -14,17 +14,17 @@ const styles = theme => ({
   },
 });
 
-function FundManagement() {
+function Account() {
   // const { classes } = props;
   return (
-    <div>
-      <TopBar title="资金管理" />
-    </div>
+    <Content>
+      资金管理
+    </Content>
   );
 }
 
-FundManagement.propTypes = {
+Account.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(FundManagement);
+export default withStyles(styles)(Account);

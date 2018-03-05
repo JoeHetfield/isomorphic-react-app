@@ -1,5 +1,20 @@
 {
   "marketingcard.botton.ok": "OK",
   "marketingcard.botton.cancel": "Cancel",
+  "helplist.tooltip": "Help",
+  "helplist.getstart": "Get Start",
+  "helplist.fqa": "FQA",
+  "helplist.fee": "Fee",
+  "helplist.security": "Security",
+  "helplist.more": "More",
+  "languagelist.tooltip": "Language",
+  "languagelist.chinese": "Chinese",
+  "languagelist.english": "English",
+  "languagelist.japanese": "Japanese",
+  "languagelist.korean": "Korean",
+  "menutabs.token2token": "Token Trading",
+  "menutabs.fiat2token": "Fiat To Token",
+  "menutabs.futures": "Futures",
+  "menutabs.account": "Account",
   "c2ct.topbar.title": "Coin to Coin Transaction"
 }

@@ -16,7 +16,7 @@ const Content = ({ classes, children }) =>
   </main>;
 
 Content.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.arrayOf(PropTypes.element),
   classes: PropTypes.object.isRequired,
 };
 

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "languagelist.tooltip",
+    "defaultMessage": "Language"
+  },
+  {
+    "id": "languagelist.chinese",
+    "defaultMessage": "Chinese"
+  },
+  {
+    "id": "languagelist.english",
+    "defaultMessage": "English"
+  },
+  {
+    "id": "languagelist.japanese",
+    "defaultMessage": "Japanese"
+  },
+  {
+    "id": "languagelist.korean",
+    "defaultMessage": "Korean"
+  }
+]

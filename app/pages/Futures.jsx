@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 // import classNames from 'classnames';
 
-import TopBar from 'components/TopBar';
+import Content from 'components/Content';
 
 const styles = theme => ({
   button: {
@@ -14,17 +14,17 @@ const styles = theme => ({
   },
 });
 
-function ContractTransaction() {
+function Futures() {
   // const { classes } = props;
   return (
-    <div>
-      <TopBar title="合约交易" />
-    </div>
+    <Content>
+      合约交易
+    </Content>
   );
 }
 
-ContractTransaction.propTypes = {
+Futures.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ContractTransaction);
+export default withStyles(styles)(Futures);

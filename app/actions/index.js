@@ -1,2 +1,2 @@
-export { default as Menu } from './menu';
-export { default as Menu2 } from './menu';
+export { default as Bootstrap } from './bootstrap';
+export { default as Locale } from './locale';
